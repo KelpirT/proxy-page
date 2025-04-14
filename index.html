@@ -1,42 +1,26 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Trình duyệt học tập</title>
+  <title>Cổng học tập</title>
   <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      margin-top: 50px;
-      background: #f4f4f4;
-    }
-    input[type="text"] {
-      width: 60%;
-      padding: 10px;
-      font-size: 16px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      margin-left: 10px;
-    }
+    body { font-family: sans-serif; padding: 50px; background: #f5f5f5; text-align: center; }
+    input { width: 80%; padding: 10px; margin-top: 20px; }
+    button { padding: 10px 20px; margin-top: 10px; }
   </style>
 </head>
 <body>
-  <h2>📚 Trình duyệt học tập</h2>
-  <p>Nhập URL bạn muốn truy cập:</p>
-  <input type="text" id="target" placeholder="https://www.tiktok.com">
+  <h1>🌐 Trình duyệt an toàn</h1>
+  <p>Nhập URL bạn muốn truy cập (ví dụ: https://www.tiktok.com)</p>
+  <input type="text" id="url" placeholder="https://..." />
+  <br/>
   <button onclick="go()">Truy cập</button>
 
   <script>
     function go() {
-      const input = document.getElementById('target').value.trim();
-      if (!input.startsWith('http')) {
-        alert('Vui lòng nhập URL hợp lệ, ví dụ: https://www.tiktok.com');
-        return;
-      }
-      const proxyBase = 'https://meat-severe-cord-monitoring.trycloudflare.com/proxy/';
-      window.location.href = proxyBase + input;
+      const inputUrl = document.getElementById('url').value;
+      const encoded = encodeURIComponent(inputUrl);
+      const proxyHost = 'https://detroit-fascinating-browsers-printers.trycloudflare.com/proxy/';
+      window.location.href = proxyHost + inputUrl;
     }
   </script>
 </body>
